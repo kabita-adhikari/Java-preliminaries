@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Java Preliminaries - Introduction</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#java-preliminaries" id="toc-java-preliminaries" class="nav-link active" data-scroll-target="#java-preliminaries"><span class="header-section-number">1</span> Java preliminaries</a>
+  <ul class="collapse">
+  <li><a href="#using-the-terminal" id="toc-using-the-terminal" class="nav-link" data-scroll-target="#using-the-terminal"><span class="header-section-number">1.1</span> Using the terminal</a></li>
+  <li><a href="#why-java" id="toc-why-java" class="nav-link" data-scroll-target="#why-java"><span class="header-section-number">1.2</span> Why Java</a></li>
+  <li><a href="#our-first-java-programagain." id="toc-our-first-java-programagain." class="nav-link" data-scroll-target="#our-first-java-programagain."><span class="header-section-number">1.3</span> Our first java program…again.</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Introduction</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="java-preliminaries" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Java preliminaries</h1>
+<p>To be in this CSC 220 class, you must have passed the Living With Cyber series taught in CSC 130-132. In that series, you covered the breadth of computer science and learned how to program using Python. At the tail end of CSC 132, you must have also covered some programming in Java. Granted, it might not have been a lot of hands on and you might not be completely comfortable with it, but this class is based on the assumption that you know what it is, and can write some programs using java. Another thing worth mentioning is that this class is a data structures class and NOT a learning how to code in java class. As such the material we’ll cover in class will be mainly about the data structures. However, by the end of the class, you will be expected to be comfortable in programming in Java. In order to bridge this gap, you will have to put in a LOT of extra hours just practicing and learning java on your own. We will spend a few classes at the beginning of the course to cover some of the more unique aspects of java, but the bulk of programming in java is going to be up to you on your own free time. The longer you take to tackle this task, the more detrimental to your assignments this will be. The assignments in this class are more involved and complex than the ones you saw in the Living With Cyber series and will be challenging even for someone who is comfortable with Java. Therefore, take a good amount of time at the beginning of the quarter (first couple of weeks) to get really comfortable with java and the command-line because the assignments will come thick and fast, and you don’t want to get bogged down with java issues when you are trying to solve data structure issues.</p>
+<p>I hope that you are now comfortably <strike>scared</strike> motivated. Here is a link that you can use to get comfortable with Java. <a href="https://goo.gl/TG4qaE" class="external" target="_blank">https://goo.gl/TG4qaE</a></p>
+<p>It is written for a student that is comfortable with python and so I think it will be really useful for you to read through it a couple of times. It shouldn’t take you more than a couple of hours for each read through. Additionally, practice some basic programming in java by attempting some of the assignments you did in Living With Cyber but using java as your language.</p>
+<section id="using-the-terminal" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="using-the-terminal"><span class="header-section-number">1.1</span> Using the terminal</h2>
+<p>Using the terminal can look daunting at first glance but it isn’t as bad as it looks. Unfortunately, like most practical skills one will need to practice using it over and over again before they can become good at using it. The benefits are numerous and being comfortable with the terminal will set you apart from your competition in the work place and in class. After all, every tom, dick, and harry can use an IDE. One of the benefits of using terminal is that combining your code with pre-existing scripts and commands is so easy and allows you to use any terminal or bash tools that are already in existance instead of writing new scripts for the same job. This is particularly important when redirecting input and output from java code which is something you are going to have to do over and over again in this class. The earlier you get comfortable with it, the better for you.</p>
+<p>Other than redirecting output, there are multiple things one can do with terminal and/or bash. <a href="https://goo.gl/YzMeBm" class="external" target="_blank">https://goo.gl/YzMeBm</a></p>
+<p>The link above is to a series of short (a couple of minutes each) tutorials on easy bash tasks that you can learn to do on terminal. They don’t have any direct impact on your java programming but I would highly encourage that you at least take a look at the first few videos and see what I am talking about when I say that you will want to be good at using terminal…and it will take repetition and time. Once you get comfortable with it, you will find that it will be considerably faster than your usual point and click techniques that you are used to and any time you spent watching this videos and trying out some of those commands will be time well spent…trust me. Once you have the latest java jdk installed on your machine, you will have to make sure that it can be compiled and executed from the command line. This is particularly involved with windows machines. Compiling and executing a java file should be automatic with linux machines. Keep track of where (which folder) you installed java on your window system since you will need that information later. Particularly the bin folder. Typically it will be located at <br> <code>C:\Program Files\Java\jdk1.8.0_31\bin</code> <br> This might look different for your own windows computer and so make sure you can find it. You will then need to edit your path variable (under SYSTEM VARIABLES) and add your folder location to it. If done properly, the commands java and javac should return some intelligible information when typed into the terminal. <a href="https://goo.gl/dxHUkg" class="external" target="_blank">https://goo.gl/dxHUkg</a></p>
+</section>
+<section id="why-java" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="why-java"><span class="header-section-number">1.2</span> Why Java</h2>
+<p>Java is a formal programming language and one of the most common in use today. Because of that, it is almost impossible to have a career in some form of programming and not use java. It is faster than python (particularly for larger programs) and a lot of the security features it possesses allow you to write programs that will crash less often when run. It is also easy to be used by more than one programmer when a team is working on a project together.</p>
+</section>
+<section id="our-first-java-programagain." class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="our-first-java-programagain."><span class="header-section-number">1.3</span> Our first java program…again.</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1"></a>class Trial</span>
+<span id="cb1-2"><a href="#cb1-2"></a>{</span>
+<span id="cb1-3"><a href="#cb1-3"></a>public static void main(String [] args)</span>
+<span id="cb1-4"><a href="#cb1-4"></a>{</span>
+<span id="cb1-5"><a href="#cb1-5"></a>System.out.println(“Hello World!”);</span>
+<span id="cb1-6"><a href="#cb1-6"></a>}</span>
+<span id="cb1-7"><a href="#cb1-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br> The code above is the java version of the famous hello world program. Before we get bogged down with the differences between java and python, we shall run this program (using terminal). You might recall that java is an interpreted language. This means that running a java program is a two step process i.e.&nbsp;compiling and execution. Compiling allows the computer to convert the java program into a form that is easy to distribute and execute on multiple systems. It also allows the computer to quickly identify potential errors and bring them to your attention before you execute the program. Contrast this with Python which is a scripted language and therefore has to be distributed as the source file. Additionally many of the errors could only be identified during the program execution which one could argue it too late for errors to be found. To compile, navigate to the folder/directory in which the .java file is, and then run the command: <br> <code>javac filename.java</code> <br> If there aren’t any syntax errors, then the command above should NOT return any message or output. It should however create a file (Trial.class) whose name depends on the names of the classes in the java files. To execute the program, run the command: <br> <code>java Trial</code> <br> This should produce the appropriate/expected output to the terminal. If your java program contained multiple classes, then the compilation would produce multiple class files. To execute your program, you would run the command above using whichever class file contained the “main program.” So now let’s discuss the actual program. Even with something as small as this program, you should be able to notice a few differences from python. First off, everything in Java is in a class. There can’t be a statement, function, etc. that is not in a class. So even for a simple hello world, we have to make a class. Classes, functions, and code blocks in general are delineated by curly braces. They show where the code blocks start and end. In python, such blocks were marked by a uniform indentation. While indentation is HIGHLY encouraged in Java, it is not strictly enforced. Statements in java are ended using a semi-colon. Consider it the full stop or period of the java programming language. Without it, the compiler will assume that the next statement is just a continuation even if there are multiple spaces and or lines between them. The reason for this is that it is common in java to have statements that span multiple lines while that was very infrequent in python.Statements that you want to be executed should be put into functions/methods.You can have any number of functions in the class but there must be a main function. This function can be compared to the conductor of an orchestra. It is the function that the compiler will begin and end its execution with. The main function is in charge of determining which other functions will be executed if any at all. Interestingly, it doesn’t have to be at the top of the class but it being at the top of the class might help with readability of your code. The main program has a specific signature or name i.e.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>public static void main(String [] args)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Memorize it because you will be writing it for every single Java program you write.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
