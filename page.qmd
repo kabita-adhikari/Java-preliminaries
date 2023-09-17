@@ -1,0 +1,165 @@
+---
+title: "Introduction"
+format:
+   html:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    code-block-bg: true
+    code-block-border-left: true
+    
+---
+
+
+# Java preliminaries 
+
+To be in this CSC 220 class, you must have passed the Living With Cyber series
+taught in CSC 130-132. In that series, you covered the breadth of computer
+science and learned how to program using Python. At the tail end of CSC 132, you
+must have also covered some programming in Java. Granted, it might not have
+been a lot of hands on and you might not be completely comfortable with it, but
+this class is based on the assumption that you know what it is, and can write
+some programs using java.
+Another thing worth mentioning is that this class is a data structures class and
+NOT a learning how to code in java class. As such the material we’ll cover in class
+will be mainly about the data structures. However, by the end of the class, you
+will be expected to be comfortable in programming in Java. In order to bridge this
+gap, you will have to put in a LOT of extra hours just practicing and learning java
+on your own. We will spend a few classes at the beginning of the course to cover
+some of the more unique aspects of java, but the bulk of programming in java is
+going to be up to you on your own free time. The longer you take to tackle this
+task, the more detrimental to your assignments this will be. The assignments in
+this class are more involved and complex than the ones you saw in the Living With
+Cyber series and will be challenging even for someone who is comfortable with
+Java. Therefore, take a good amount of time at the beginning of the quarter (first
+couple of weeks) to get really comfortable with java and the command-line
+because the assignments will come thick and fast, and you don’t want to get
+bogged down with java issues when you are trying to solve data structure issues.
+
+I hope that you are now comfortably <strike>scared</strike> motivated. Here is a link that you can use
+to get comfortable with Java.
+[https://goo.gl/TG4qaE](https://goo.gl/TG4qaE){.external target="_blank"}
+
+
+It is written for a student that is comfortable with python and so I think it will be
+really useful for you to read through it a couple of times. It shouldn’t take you more
+than a couple of hours for each read through. Additionally, practice some basic
+programming in java by attempting some of the assignments you did in Living With
+Cyber but using java as your language.
+
+## Using the terminal
+Using the terminal can look daunting at first glance but it isn’t as bad as it looks.
+Unfortunately, like most practical skills one will need to practice using it over and
+over again before they can become good at using it. The benefits are numerous
+and being comfortable with the terminal will set you apart from your competition
+in the work place and in class. After all, every tom, dick, and harry can use an IDE.
+One of the benefits of using terminal is that combining your code with pre-existing
+scripts and commands is so easy and allows you to use any terminal or bash tools
+that are already in existance instead of writing new scripts for the same job. This is particularly important when redirecting input and output from java code which
+is something you are going to have to do over and over again in this class. The
+earlier you get comfortable with it, the better for you.
+
+Other than redirecting output, there are multiple things one can do with terminal and/or
+bash.
+[https://goo.gl/YzMeBm](https://goo.gl/YzMeBm){.external target="_blank"}
+
+
+
+The link above is to a series of short (a couple of minutes each) tutorials on easy
+bash tasks that you can learn to do on terminal. They don’t have any direct impact on
+your java programming but I would highly encourage that you at least take a look at the first few videos and see what I am talking about when I say that you will want
+to be good at using terminal...and it will take repetition and time. Once you get
+comfortable with it, you will find that it will be considerably faster than your usual
+point and click techniques that you are used to and any time you spent watching this
+videos and trying out some of those commands will be time well spent...trust me.
+Once you have the latest java jdk installed on your machine, you will have to
+make sure that it can be compiled and executed from the command line. This is
+particularly involved with windows machines. Compiling and executing a java file
+should be automatic with linux machines. Keep track of where (which folder) you
+installed java on your window system since you will need that information later.
+Particularly the bin folder. Typically it will be located at
+<br>
+   ``` C:\Program Files\Java\jdk1.8.0_31\bin```
+</br>
+This might look different for your own windows computer and so make sure you
+can find it.
+You will then need to edit your path variable (under SYSTEM VARIABLES) and add
+your folder location to it. If done properly, the commands java and javac should
+return some intelligible information when typed into the terminal.
+[https://goo.gl/dxHUkg](https://goo.gl/dxHUkg){.external target="_blank"}
+
+
+## Why Java
+Java is a formal programming language and one of the most common in use today.
+Because of that, it is almost impossible to have a career in some form of
+programming and not use java. It is faster than python (particularly for larger
+programs) and a lot of the security features it possesses allow you to write
+programs that will crash less often when run. It is also easy to be used by more
+than one programmer when a team is working on a project together.
+
+## Our first java program...again.
+``` { .default code-line-numbers="true"}
+class Trial
+{
+public static void main(String [] args)
+{
+System.out.println(“Hello World!”);
+}
+}
+```
+<br>
+The code above is the java version of the famous hello world program. Before we
+get bogged down with the differences between java and python, we shall run this
+program (using terminal).
+You might recall that java is an interpreted language. This means that running a
+java program is a two step process i.e. compiling and execution. Compiling allows
+the computer to convert the java program into a form that is easy to distribute
+and execute on multiple systems. It also allows the computer to quickly identify
+potential errors and bring them to your attention before you execute the program.
+Contrast this with Python which is a scripted language and therefore has to be
+distributed as the source file. Additionally many of the errors could only be
+identified during the program execution which one could argue it too late for
+errors to be found.
+To compile, navigate to the folder/directory in which the .java file is, and then run
+the command:
+<br>
+       ` javac filename.java`
+</br>
+If there aren’t any syntax errors, then the command above should NOT return any
+message or output. It should however create a file (Trial.class) whose name
+depends on the names of the classes in the java files.
+To execute the program, run the command:
+<br>
+        `java Trial` 
+</br>
+This should produce the appropriate/expected output to the terminal. If your java
+program contained multiple classes, then the compilation would produce multiple
+class files. To execute your program, you would run the command above using
+whichever class file contained the “main program.”
+So now let’s discuss the actual program. Even with something as small as this
+program, you should be able to notice a few differences from python. First off,
+everything in Java is in a class. There can’t be a statement, function, etc. that is
+not in a class. So even for a simple hello world, we have to make a class.
+Classes, functions, and code blocks in general are delineated by curly braces.
+They show where the code blocks start and end. In python, such blocks were
+marked by a uniform indentation. While indentation is HIGHLY encouraged in Java,
+it is not strictly enforced.
+Statements in java are ended using a semi-colon. Consider it the full stop or
+period of the java programming language. Without it, the compiler will assume
+that the next statement is just a continuation even if there are multiple spaces
+and or lines between them. The reason for this is that it is common in java to have
+statements that span multiple lines while that was very infrequent in python.Statements that you want to be executed should be put into functions/methods.You can have any number of functions in the class but there must be a main
+function. This function can be compared to the conductor of an orchestra. It is the
+function that the compiler will begin and end its execution with. The main function
+is in charge of determining which other functions will be executed if any at all.
+Interestingly, it doesn’t have to be at the top of the class but it being at the top of
+the class might help with readability of your code. The main program has a
+specific signature or name i.e.
+``` {.default}
+public static void main(String [] args)
+```
+
+Memorize it because you will be writing it for every single Java program you write.
+
+
+ 
